@@ -4,72 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dexter morgan</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Tüm stil burada, dış dosyaya gerek yok */
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #a6c6c6; /* Masaüstü yeşili */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Tahoma', 'Geneva', sans-serif;
+    }
+
+    .browser {
+      width: 900px;
+      height: 600px;
+      background-color: #c0c0c0;
+      border: 3px solid;
+      border-color: #dfdfdf #000 #000 #dfdfdf;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    .title-bar {
+      background: #000080;
+      color: white;
+      padding: 4px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .controls button {
+      background: #c0c0c0;
+      border: 2px solid;
+      border-color: #ffffff #000 #000 #ffffff;
+      font-family: monospace;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 12px;
+      padding: 4px 8px;
+      border-bottom: 1px solid #808080;
+      font-size: 13px;
+    }
+
+    .windows-area {
+      flex-grow: 1;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      background-color: #3a6ea5; /* İçerik arkası mavi ekran */
+      overflow: auto;
+    }
+
+    .window {
+      background-color: #c0c0c0;
+      border: 2px solid;
+      border-color: #dfdfdf #000 #000 #dfdfdf;
+      width: 350px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .window-header {
+      background: #808080;
+      color: white;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .window-content {
+      background: white;
+      margin: 4px;
+      padding: 15px;
+      border: 2px solid;
+      border-color: #808080 #dfdfdf #dfdfdf #808080;
+      min-height: 150px;
+    }
+
+    .heading { color: #029702; font-size: 20px; margin: 0 0 10px 0; }
+    .paragraph { font-size: 14px; line-height: 1.4; color: #000; }
+
+    .status-bar {
+      background: #c0c0c0;
+      border-top: 2px solid #808080;
+      padding: 2px;
+      display: flex;
+      font-size: 11px;
+    }
+
+    .field {
+      border: 1px solid;
+      border-color: #808080 #fff #fff #808080;
+      padding: 2px 8px;
+      margin-right: 2px;
+    }
+  </style>
 </head>
-<body id="desktop">
+<body>
 
   <div class="browser">
     <div class="title-bar">
-      <div class="title">dexter morgan</div>
+      <span>dexter morgan</span>
       <div class="controls">
-        <button class="btn">_</button>
-        <button class="btn">[]</button>
-        <button class="btn">X</button>
+        <button> _ </button>
+        <button> [] </button>
+        <button> X </button>
       </div>
     </div>
 
     <div class="menu">
       <span><u>F</u>ile</span>
       <span><u>E</u>dit</span>
-      <span><u>N</u>avigation</span>
-      <span><u>P</u>references</span>
-      <span><u>P</u>rograms</span>
-      <span><u>W</u>indow</span>
       <span><u>H</u>elp</span>
     </div>
 
-    <main class="windows">
-      
-      <section class="window" id="win-image">
-        <header class="bar">
-          <div class="label">my photos :3</div>
-        </header>
-        <div class="content">
-          <div class="images">
-            <img src="images/dexter-cat.jpg" alt="dexter with a cat" class="cat-pic">
-          </div>
+    <div class="windows-area">
+      <section class="window">
+        <div class="window-header">about me</div>
+        <div class="window-content">
+          <h1 class="heading">Interests</h1>
+          <p class="paragraph">Checking for blood spatter patterns in Miami.</p>
+          <p class="paragraph">Precision is everything.</p>
         </div>
       </section>
 
-      <section class="window" id="win-info">
-        <header class="bar">
-          <div class="label">about me</div>
-        </header>
-        <div class="content">
-          <h1 class="heading">interests</h1>
-          <p class="paragraph">
-            the owner is currently in Miami checking for blood spatter patterns.
-          </p>
-          <p class="paragraph">
-            interested in forensic science, the precision of a sharp blade, and... the code.
-          </p>
+      <section class="window">
+        <div class="window-header">links</div>
+        <div class="window-content">
+          <h1 class="heading">More</h1>
+          <p class="paragraph">Everything is hidden in the code.</p>
+          <a href="#" style="color: blue;">incriminating_link.exe</a>
         </div>
       </section>
+    </div>
 
-      <section class="window" id="win-link">
-        <header class="bar">
-          <div class="label">links</div>
-        </header>
-        <div class="content">
-          <h1 class="heading">more</h1>
-          <p class="paragraph">if you are really interested in what the owner
-            is doing out on his boat at 3.00am, here is a 
-            <a href="https://dexter.fandom.com/wiki/Miami_Metro_Police_Department" class="link">pretty incriminating link</a> 
-          </p>
-        </div>
-      </section>
-
-    </main>
-    
     <div class="status-bar">
-      <div class="field">System
+      <div class="field" style="flex-grow: 1;">System: Online</div>
+      <div class="field">Miami Metro Police</div>
+    </div>
+  </div>
+
+</body>
+</html>
