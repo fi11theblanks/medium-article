@@ -12,9 +12,9 @@
     <div class="title-bar">
       <div class="title">dexter morgan</div>
       <div class="controls">
-        <button class="btn">_ </button>
-        <button class="btn">[] </button>
-        <button class="btn">X </button>
+        <button class="btn">_</button>
+        <button class="btn">[]</button>
+        <button class="btn">X</button>
       </div>
     </div>
 
@@ -29,6 +29,7 @@
     </div>
 
     <main class="windows">
+      
       <section class="window" id="win-image">
         <header class="bar">
           <div class="label">my photos :3</div>
@@ -59,16 +60,22 @@
         <header class="bar">
           <div class="label">links</div>
         </header>
-
-
         <div class="content">
           <h1 class="heading">more</h1>
           <p class="paragraph">if you are really interested in what the owner
-            is doing out on his boat at 3.00am, here is a <a
-              href="https://dexter.fandom.com/wiki/Miami_Metro_Police_Department" class="link">pretty incriminating
-              link</a> </p>
+            is doing out on his boat at 3.00am, here is a 
+            <a href="https://dexter.fandom.com/wiki/Miami_Metro_Police_Department" class="link">pretty incriminating link</a> 
+          </p>
         </div>
       </section>
-    </main>
 
-</html>
+    </main> </div> </body> </html> ```
+
+### Neleri Düzelttim/Ekledim?
+
+1.  **Eksik Etiketler:** `</main>`, `</div>`, `</body>` ve `</html>` etiketleri eksikti, onları ekledim. Bunlar olmazsa tarayıcı sayfayı yanlış yorumlayabilir.
+2.  **Hiyerarşi:** `.windows` içindeki pencerelerin düzgün hizalanması için `main` etiketini `.browser` div'inin içine aldım (eğer amacın pencereleri tarayıcı penceresinin içinde tutmaksa).
+3.  **Temizlik:** Link kısmındaki gereksiz boşlukları aldım ki metin içinde garip kırılmalar olmasın.
+
+### Küçük Bir İpucu:
+Pencerelerin (id="win-info
